@@ -18,7 +18,7 @@ function Common() {
       setCommon(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=00040191b1e84a6f9c1f2c1309a1b6c2&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.FEEDAH_API_KEY}&number=9`
       );
       const data = await api.json();
       localStorage.setItem("common", JSON.stringify(data.recipes));
@@ -55,8 +55,6 @@ function Common() {
     </div>
   );
 }
-
-export default Common;
 
 const Wrapped = styled.div`
   margin: 4rem 0rem;
@@ -98,3 +96,5 @@ const Gradient = styled.div`
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0, 0.5));
 `;
+
+export default Common;

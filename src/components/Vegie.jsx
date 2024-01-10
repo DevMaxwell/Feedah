@@ -18,7 +18,7 @@ function Vegie() {
       setVegie(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.FEEDAH_API_KEY}&number=9&tags=vegetarian`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.FEEDAH_API_KEY}&number=9&tag=vegetarian `
       );
       const data = await api.json();
       localStorage.setItem("vegie", JSON.stringify(data.recipes));
@@ -55,8 +55,6 @@ function Vegie() {
     </div>
   );
 }
-
-export default Vegie;
 
 const Wrapped = styled.div`
   margin: 4rem 0rem;
@@ -97,3 +95,5 @@ const Gradient = styled.div`
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0, 0.5));
 `;
+
+export default Vegie;
