@@ -68,14 +68,14 @@ const Card = styled.div`
 
   img {
     border-radius: 2rem;
-    postion: absolute;
+    position: absolute;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   p {
-    postion: absolute;
+    position: absolute;
     z-index: 10;
     left: 50%;
     bottom: 0%;
@@ -87,6 +87,8 @@ const Card = styled.div`
     font-size: 1rem;
     height: 40%;
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -95,7 +97,7 @@ const Gradient = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0, 0.5));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0 0 0.5));
 `;
 
 export default Common;
