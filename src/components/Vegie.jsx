@@ -17,8 +17,10 @@ function Vegie() {
     if (check) {
       setVegie(JSON.parse(check));
     } else {
+      const apiKey = process.env.REACT_APP_API_KEY;
+      console.log("API Key:", apiKey);
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.FEEDAH_API_KEY}&number=9&tag=vegetarian `
+        `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=9&tag=vegetarian`
       );
       const data = await api.json();
       localStorage.setItem("vegie", JSON.stringify(data.recipes));

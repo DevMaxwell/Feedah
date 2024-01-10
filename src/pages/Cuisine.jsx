@@ -9,10 +9,11 @@ const Cuisine = () => {
   let params = useParams();
 
   const getCuisine = async (name) => {
+    const apiKey = process.env.REACT_APP_API_KEY;
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.FEEDAH_API_KEY}&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${name}`
     );
-    const recipes = await data.json;
+    const recipes = await data.json();
     setCuisine(recipes.results);
   };
 
@@ -25,6 +26,7 @@ const Cuisine = () => {
         return (
           <Card key={item.id}>
             <img src={item.image} alt='' />
+            <h4>{item.title}</h4>
           </Card>
         );
       })}

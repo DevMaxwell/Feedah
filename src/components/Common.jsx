@@ -17,8 +17,9 @@ function Common() {
     if (check) {
       setCommon(JSON.parse(check));
     } else {
+      const apiKey = process.env.REACT_APP_API_KEY;
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.FEEDAH_API_KEY}&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=9`
       );
       const data = await api.json();
       localStorage.setItem("common", JSON.stringify(data.recipes));
