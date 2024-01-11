@@ -31,7 +31,7 @@ function Vegie() {
   return (
     <div>
       <Wrapped>
-        <h4>Vegies 4U</h4>
+        <h3>Vegies 4U</h3>
         <Splide
           options={{
             perPage: 3,
@@ -60,6 +60,13 @@ function Vegie() {
 
 const Wrapped = styled.div`
   margin: 4rem 0rem;
+  h3 {
+    padding: 5px;
+    font-size: 1rem;
+    background: linear-gradient(to right, #e94057, #f27121);
+    border-radius: 3px;
+    color: white;
+  }
 `;
 
 const Card = styled.div`
@@ -69,14 +76,16 @@ const Card = styled.div`
 
   img {
     border-radius: 2rem;
-    postion: absolute;
+    position: absolute;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    overflow: hidden;
   }
   p {
-    postion: absolute;
+    position: absolute;
     z-index: 10;
     left: 50%;
     bottom: 0%;
@@ -88,14 +97,19 @@ const Card = styled.div`
     font-size: 1rem;
     height: 40%;
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
+
 const Gradient = styled.div`
   z-index: 3;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0, 0.5));
+  background: linear-gradient(35deg, #494949, #313131);
+  opacity: 0.5;
+  border-radius: 2rem;
 `;
 
 export default Vegie;

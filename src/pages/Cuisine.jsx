@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import Category from "../components/Category";
+import Search from "../components/Search";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Logo from "../components/Logo";
 
 const Cuisine = () => {
+  const customMarg = {
+    margin: "0% 20%",
+  };
   const [cuisine, setCuisine] = useState([]);
   let params = useParams();
 
@@ -22,16 +28,21 @@ const Cuisine = () => {
     console.log(params.type);
   }, [params.type]);
   return (
-    <Grid>
-      {cuisine.map((item) => {
-        return (
-          <Card key={item.id}>
-            <img src={item.image} alt='' />
-            <h4>{item.title}</h4>
-          </Card>
-        );
-      })}
-    </Grid>
+    <div tyle={customMarg}>
+      <Logo />
+      <Search />
+      <Category />
+      <Grid>
+        {cuisine.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img src={item.image} alt='' />
+              <h4>{item.title}</h4>
+            </Card>
+          );
+        })}
+      </Grid>
+    </div>
   );
 };
 

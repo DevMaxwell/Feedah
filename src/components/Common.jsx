@@ -30,7 +30,7 @@ function Common() {
   return (
     <div>
       <Wrapped>
-        <h4>Trending picks</h4>
+        <h3>Trending picks</h3>
         <Splide
           options={{
             perPage: 3,
@@ -59,6 +59,13 @@ function Common() {
 
 const Wrapped = styled.div`
   margin: 4rem 0rem;
+  h3 {
+    padding: 5px;
+    font-size: 1rem;
+    background: linear-gradient(to right, #e94057, #f27121);
+    border-radius: 3px;
+    color: white;
+  }
 `;
 
 const Card = styled.div`
@@ -97,7 +104,9 @@ const Gradient = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0 0 0.5));
+  background: linear-gradient(35deg, #494949, #313131);
+  opacity: 0.5;
+  border-radius: 2rem;
 `;
 
 export default Common;
