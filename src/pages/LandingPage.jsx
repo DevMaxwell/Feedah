@@ -1,5 +1,7 @@
 import React from "react";
 import "./keyframe.css";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const LandingPage = () => {
   const landingPageStyle = {
@@ -8,6 +10,7 @@ const LandingPage = () => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "100vh",
+    //textDecoration: "none",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -39,6 +42,7 @@ const LandingPage = () => {
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
+    textDecoration: "none",
     marginTop: "12rem",
     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Add box shadow
     animation: "bounce 3s infinite",
@@ -68,9 +72,15 @@ const LandingPage = () => {
           <i> Unleash your inner chef.</i>{" "}
         </span>
       </span>
-      <button style={buttonStyle}>Dive in already</button>
+      <button style={buttonStyle}>
+        <SSlink to='/cuisine'>Dive in already</SSlink>
+      </button>
     </div>
   );
 };
 
+const SSlink = styled(NavLink)`
+  text-decoration: none;
+  color: white;
+`;
 export default LandingPage;

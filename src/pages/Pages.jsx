@@ -3,6 +3,7 @@ import Home from "./Home";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Cuisine from "./Cuisine";
 import LandingPage from "./LandingPage";
+import Searched from "./Searched";
 
 function Pages() {
   return (
@@ -10,6 +11,7 @@ function Pages() {
       <Route path='/' element={<LandingPage />} />
       <Route path='/cuisine' element={<Home />} />
       <Route path='/cuisine/:type' element={<Cuisine />} />
+      <Route path='/search/:search' element={<Searched />} />
     </Routes>
   );
 }
