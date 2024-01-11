@@ -4,6 +4,7 @@ import Vegie from "../components/Vegie";
 import Category from "../components/Category";
 import Search from "../components/Search";
 import Logo from "../components/Logo";
+import Footer from "../components/Footer";
 
 function Home() {
   const customMarg = {
@@ -17,6 +18,7 @@ function Home() {
 
       <Vegie />
       <Common />
+      <Footer />
     </div>
   );
 }

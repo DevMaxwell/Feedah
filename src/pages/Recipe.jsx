@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Logo from "../components/Logo";
 import Search from "../components/Search";
 import Category from "../components/Category";
+import Footer from "../components/Footer";
 
 const Recipe = () => {
   let params = useParams();
@@ -73,6 +74,7 @@ const Recipe = () => {
           )}
         </Info>
       </DetailWrapper>
+      <Footer />
     </Wrapper>
   );
 };

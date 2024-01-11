@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Logo from "../components/Logo";
+import Footer from "../components/Footer";
 
 const Cuisine = () => {
   const customMarg = {
@@ -44,6 +45,7 @@ const Cuisine = () => {
           );
         })}
       </Grid>
+      <Footer />
     </div>
   );
 };
