@@ -28,17 +28,19 @@ const Cuisine = () => {
     console.log(params.type);
   }, [params.type]);
   return (
-    <div tyle={customMarg}>
+    <div style={customMarg}>
       <Logo />
       <Search />
       <Category />
       <Grid>
         {cuisine.map((item) => {
           return (
-            <Card key={item.id}>
-              <img src={item.image} alt='' />
-              <h4>{item.title}</h4>
-            </Card>
+            <Link to={"/recipe/" + item.id}>
+              <Card key={item.id}>
+                <img src={item.image} alt='' />
+                <h4>{item.title}</h4>
+              </Card>
+            </Link>
           );
         })}
       </Grid>
@@ -47,12 +49,20 @@ const Cuisine = () => {
 };
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-column: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-grap: 3rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  & > * {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 10px;
+  }
 `;
 
 const Card = styled.div`
+  text-decoration: none;
   img {
     width: 100%;
     border-radius: 2rem;

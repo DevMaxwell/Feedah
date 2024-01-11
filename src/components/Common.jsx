@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { Link } from "react-router-dom";
 
 function Common() {
   const [common, setCommon] = useState([]);
@@ -44,9 +45,11 @@ function Common() {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <Gradient />
+                  <Link to={"/recipe/" + recipe.id}>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Link>
                 </Card>
               </SplideSlide>
             );
@@ -69,7 +72,7 @@ const Wrapped = styled.div`
 `;
 
 const Card = styled.div`
-  min-height: 35rem;
+  min-height: 25rem;
   border-radius: 2rem;
   overflow: hidden;
 
